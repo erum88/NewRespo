@@ -19,5 +19,6 @@ target 'SimpleCreation' do
 pod 'AlamofireImage'
 pod 'Moya'
 pod 'SwiftyJSON'
+pod 'SDWebImage'
 
 end

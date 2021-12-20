@@ -1,0 +1,6 @@
+framework module Pods_SimpleCreation_SimpleCreationUITests {
+  umbrella header "Pods-SimpleCreation-SimpleCreationUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,7 +16,18 @@ class SimpleCreationTests: XCTestCase {
         XCTAssertEqual(baseURLString, expectedBaseURLString)
     }
     
-    func testOtherApiCheck() {
+    func testImagegetApiCheck() {
+        
+        let expectation = self.expectation(description: "ImagegetApiCheck")
+        
+        API.getImageListAPI{ (result, error) in
+            
+            XCTAssertNotNil(result)
+            
+            expectation.fulfill()
+        }
+      waitForExpectations(timeout: 10, handler: nil)
+        
         
     }
 

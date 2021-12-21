@@ -16,6 +16,12 @@ class mainController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        apiCall()
+    }
+    
+    
+    func apiCall() {
+        
         API.getImageListAPI{ (result, error) in
             guard let data = result else {return}
             defer{self.tableView.reloadData()}

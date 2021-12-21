@@ -15,6 +15,7 @@ func printDebug<T>(_ obj: T) {
     //MARK:- Comment Line to disable all logs
     print(obj)
 }
+
 internal typealias CompletionHandler<T> = (_ result: T?, _ error: Swift.Error?) -> Void
 
 class DefaultAlamofireSession: Alamofire.Session {

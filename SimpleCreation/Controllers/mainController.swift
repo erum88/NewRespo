@@ -7,29 +7,34 @@
 
 import UIKit
 
-class mainController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class mainController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
     var resultImages = [listModel]()
+    var mainViewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        apiCall()
-    }
-    
-    
-    func apiCall() {
-        
-        API.getImageListAPI{ (result, error) in
-            guard let data = result else {return}
-            defer{self.tableView.reloadData()}
-              self.resultImages.append(contentsOf: data)
+
+        self.tableView.register(nib: MainTableViewCell.loadNib(), withCellClass: MainTableViewCell.self)
+      
+        mainViewModel.apiCall{ data in
+            self.resultImages.append(contentsOf: data)
+            self.tableView.reloadData()
         }
+       
     }
     
-    //MARK:- TableView
+    
+   
+   
+
+}
+
+
+extension mainController: UITableViewDelegate,UITableViewDataSource{
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return resultImages.count
@@ -38,18 +43,9 @@ class mainController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableviewCell",for: indexPath) as! ImageTableviewCell
-        cell.selectionStyle = .none
         
-        let rowData = resultImages[indexPath.row]
-        
-        cell.picView.dropShadow()
-        
-        cell.PicImage.setImageWith( "https://picsum.photos/200/300?image=\(rowData.id ?? 33)")
-       
-        cell.nameLabel.text = "AUTHOR: " +  rowData.author!
-        
-    
+        let cell = tableView.dequeueReusableCell(withClass: MainTableViewCell.self, for: indexPath)
+        cell.populateData(data: &self.resultImages, index: indexPath.row)
         
         return cell
       }
@@ -63,13 +59,4 @@ class mainController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(broadVC, animated:true, completion: nil)
        
     }
-
-}
-
-class ImageTableviewCell : UITableViewCell{
-    
-    @IBOutlet weak var PicImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var picView: UIView!
-
 }

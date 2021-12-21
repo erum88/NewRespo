@@ -42,9 +42,6 @@ class API {
                 printRequest(response)
                 
                 let decoder = JSONDecoder()
-//                let df = DateFormatter.dateFormatter
-//                df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-//                decoder.dateDecodingStrategy = .formatted(df)
                 
                 do {
                     let data = try decoder.decode([listModel].self, from: response.data)
@@ -57,9 +54,8 @@ class API {
                         return
                     }
                     printDebug(errorValue)
-                 
-                 //   AKAlertController.alert("image", message: errorValue.errorMessage)
-               //     completion(nil, NSError(domain: errorValue.errorMessage, code: 400))
+                    
+                    completion(nil, NSError(domain: errorValue.errorMessage, code: 400))
                 }
                 
             case .failure(let error):

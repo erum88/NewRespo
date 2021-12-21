@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  SimpleCreation
+//
+//  Created by Erum on 22/12/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+
+BASE_URL = "https://picsum.photos/"

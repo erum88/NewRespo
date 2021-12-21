@@ -36,54 +36,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="00U-ws-tAa">
                                 <rect key="frame" x="0.0" y="79" width="414" height="817"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageTableviewCell" rowHeight="215" id="yAf-k6-sQb" customClass="ImageTableviewCell" customModule="SimpleCreation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="215"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yAf-k6-sQb" id="lgr-Bh-5Yo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-IC-bWa">
-                                                    <rect key="frame" x="18" y="18" width="378" height="167"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HfL-ZO-rvA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="167"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="HfL-ZO-rvA" firstAttribute="leading" secondItem="eXc-IC-bWa" secondAttribute="leading" id="3sK-0Y-pcf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="HfL-ZO-rvA" secondAttribute="trailing" id="ElE-ae-mKG"/>
-                                                        <constraint firstAttribute="height" constant="167" id="LSX-gj-Lta"/>
-                                                        <constraint firstItem="HfL-ZO-rvA" firstAttribute="top" secondItem="eXc-IC-bWa" secondAttribute="top" id="xxD-wT-bk6"/>
-                                                        <constraint firstAttribute="bottom" secondItem="HfL-ZO-rvA" secondAttribute="bottom" id="zWa-O9-0I5"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOk-xB-gFa">
-                                                    <rect key="frame" x="18" y="190" width="378" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="eXc-IC-bWa" firstAttribute="leading" secondItem="lgr-Bh-5Yo" secondAttribute="leading" constant="18" id="26I-k5-WQ8"/>
-                                                <constraint firstAttribute="trailing" secondItem="eXc-IC-bWa" secondAttribute="trailing" constant="18" id="3xA-lV-2AJ"/>
-                                                <constraint firstItem="VOk-xB-gFa" firstAttribute="leading" secondItem="eXc-IC-bWa" secondAttribute="leading" id="Pf3-iC-dfs"/>
-                                                <constraint firstAttribute="bottom" secondItem="eXc-IC-bWa" secondAttribute="bottom" constant="30" id="pHT-tZ-DqL"/>
-                                                <constraint firstItem="VOk-xB-gFa" firstAttribute="top" secondItem="eXc-IC-bWa" secondAttribute="bottom" constant="5" id="qEH-mb-ome"/>
-                                                <constraint firstItem="VOk-xB-gFa" firstAttribute="trailing" secondItem="eXc-IC-bWa" secondAttribute="trailing" id="y5B-hd-Mrb"/>
-                                                <constraint firstItem="eXc-IC-bWa" firstAttribute="top" secondItem="lgr-Bh-5Yo" secondAttribute="top" constant="18" id="zbl-gZ-WDp"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="PicImage" destination="HfL-ZO-rvA" id="tji-T0-Goh"/>
-                                            <outlet property="nameLabel" destination="VOk-xB-gFa" id="HMd-RI-Uwn"/>
-                                            <outlet property="picView" destination="eXc-IC-bWa" id="ryv-DF-7Wd"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="XqB-CQ-Wgh"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XAy-y8-EId"/>
